@@ -33,38 +33,6 @@ public interface SmartHomeManagerWebServices {
      */
     @WebMethod
     @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/loginRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/loginResponse")
-    public CommandResponseObject login(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        UserTransferObject arg1);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutResponse")
-    public CommandResponseObject logout(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        UserTransferObject arg1);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/setHeatingTemperatureRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/setHeatingTemperatureResponse")
     public CommandResponseObject setHeatingTemperature(
         @WebParam(name = "arg0", partName = "arg0")
@@ -76,12 +44,12 @@ public interface SmartHomeManagerWebServices {
      * 
      * @param arg0
      * @return
-     *     returns double
+     *     returns connection.webservices.consumer.stubs.HeatingTransferObject
      */
     @WebMethod
     @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getHeatingTemperatureRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getHeatingTemperatureResponse")
-    public double getHeatingTemperature(
+    public HeatingTransferObject getHeatingTemperature(
         @WebParam(name = "arg0", partName = "arg0")
         UserTransferObject arg0);
 
@@ -144,12 +112,12 @@ public interface SmartHomeManagerWebServices {
      * 
      * @param arg0
      * @return
-     *     returns double
+     *     returns connection.webservices.consumer.stubs.WeatherStationTransferObject
      */
     @WebMethod
     @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getOutdoorTemperatureRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getOutdoorTemperatureResponse")
-    public double getOutdoorTemperature(
+    public WeatherStationTransferObject getOutdoorTemperature(
         @WebParam(name = "arg0", partName = "arg0")
         UserTransferObject arg0);
 
@@ -157,12 +125,12 @@ public interface SmartHomeManagerWebServices {
      * 
      * @param arg0
      * @return
-     *     returns double
+     *     returns connection.webservices.consumer.stubs.WeatherStationTransferObject
      */
     @WebMethod
     @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getRainfallAmountRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getRainfallAmountResponse")
-    public double getRainfallAmount(
+    public WeatherStationTransferObject getRainfallAmount(
         @WebParam(name = "arg0", partName = "arg0")
         UserTransferObject arg0);
 
@@ -212,12 +180,12 @@ public interface SmartHomeManagerWebServices {
      * 
      * @param arg0
      * @return
-     *     returns double
+     *     returns connection.webservices.consumer.stubs.ThermometerTransferObject
      */
     @WebMethod
     @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getIndoorTemperatureRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getIndoorTemperatureResponse")
-    public double getIndoorTemperature(
+    public ThermometerTransferObject getIndoorTemperature(
         @WebParam(name = "arg0", partName = "arg0")
         UserTransferObject arg0);
 
@@ -231,6 +199,19 @@ public interface SmartHomeManagerWebServices {
     @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getThermometerDataRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getThermometerDataResponse")
     public ThermometerTransferObject getThermometerData(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.WeatherStationTransferObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirHumidityRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirHumidityResponse")
+    public WeatherStationTransferObject getAirHumidity(
         @WebParam(name = "arg0", partName = "arg0")
         UserTransferObject arg0);
 
@@ -467,25 +448,12 @@ public interface SmartHomeManagerWebServices {
      * 
      * @param arg0
      * @return
-     *     returns double
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirHumidityRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirHumidityResponse")
-    public double getAirHumidity(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns double
+     *     returns connection.webservices.consumer.stubs.WeatherStationTransferObject
      */
     @WebMethod
     @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirPressureRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirPressureResponse")
-    public double getAirPressure(
+    public WeatherStationTransferObject getAirPressure(
         @WebParam(name = "arg0", partName = "arg0")
         UserTransferObject arg0);
 
@@ -493,12 +461,12 @@ public interface SmartHomeManagerWebServices {
      * 
      * @param arg0
      * @return
-     *     returns double
+     *     returns connection.webservices.consumer.stubs.WeatherStationTransferObject
      */
     @WebMethod
     @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getWindVelocityRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getWindVelocityResponse")
-    public double getWindVelocity(
+    public WeatherStationTransferObject getWindVelocity(
         @WebParam(name = "arg0", partName = "arg0")
         UserTransferObject arg0);
 
@@ -517,6 +485,38 @@ public interface SmartHomeManagerWebServices {
      * @param arg1
      * @param arg0
      * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/loginRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/loginResponse")
+    public CommandResponseObject login(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        UserTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutResponse")
+    public CommandResponseObject logout(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        UserTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
      *     returns connection.webservices.consumer.stubs.StringArray
      */
     @WebMethod
@@ -527,21 +527,5 @@ public interface SmartHomeManagerWebServices {
         UserTransferObject arg0,
         @WebParam(name = "arg1", partName = "arg1")
         int arg1);
-
-    /**
-     * 
-     * @param weight
-     * @param height
-     * @return
-     *     returns double
-     */
-    @WebMethod(operationName = "body-mass-index")
-    @WebResult(name = "your-bmi", partName = "your-bmi")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/body-mass-indexRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/body-mass-indexResponse")
-    public double bodyMassIndex(
-        @WebParam(name = "height", partName = "height")
-        double height,
-        @WebParam(name = "weight", partName = "weight")
-        double weight);
 
 }
