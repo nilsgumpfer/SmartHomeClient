@@ -1,5 +1,9 @@
 package sample;
 
+import connection.webservices.consumer.stubs.SmartHomeManagerWebServiceDescriptorService;
+import connection.webservices.consumer.stubs.SmartHomeManagerWebServices;
+import connection.webservices.consumer.stubs.StringArray;
+import connection.webservices.consumer.stubs.UserTransferObject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,5 +24,24 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(parentRoot, 300, 275));
         primaryStage.show();
+
+        SmartHomeManagerWebServices smartHomeManagerWebServicesPort = new SmartHomeManagerWebServiceDescriptorService().getSmartHomeManagerWebServicesPort();
+
+        //Object for authorization
+        UserTransferObject o = new UserTransferObject();
+
+        //Test some stuff..
+        //System.out.println("" + service.getMessage(ResponseCode.SHUTTER_COULD_NOT_BE_CREATED));
+
+        //CommandResponseObject responseObject = service.moveShutterUp(o, new ShutterTransferObject());
+        //System.out.println(responseObject.getMessage());
+        //service.login(o);
+
+        //Read and print logs
+        StringArray array = smartHomeManagerWebServicesPort.readLogs(o,10);
+
+        for (String item: array.getItem()) {
+            System.out.println(item);
+        }
     }
 }
