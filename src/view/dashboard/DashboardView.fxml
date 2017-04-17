@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="53.0" layoutY="8.0" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="53.0" prefWidth="307.0" text="SmartHomeClient" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <GridPane prefHeight="50.0" prefWidth="38.0" GridPane.columnIndex="2">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Undo" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <ImageView GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                     <image>
+                        <Image url="@../../resources/back-left.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </GridPane>
+            <ImageView fitHeight="40.0" fitWidth="43.0">
+               <image>
+                  <Image url="@../../resources/smarthome.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </ImageView>
+         </children>
+      </GridPane>
+      <AnchorPane layoutX="268.0" layoutY="230.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EBEBEB;">
+                     <children>
+                        <Label layoutX="21.0" layoutY="14.0" text="Heizung" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="9.0" layoutY="49.0" prefHeight="170.0" prefWidth="307.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="60.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Name:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Hersteller:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Temperatur:" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Modell:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Seriennummer:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="NAME" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="HERSTELLER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="MODELL" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="SERIENNUMMER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="TEMPERATUR" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Modus:" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="MODUS" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <ImageView fitHeight="164.0" fitWidth="72.0" layoutX="359.0" layoutY="35.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="60.0">
+                           <image>
+                              <Image url="@../../resources/Vitorondens.png" />
+                           </image>
+                        </ImageView>
+                        <GridPane layoutX="217.0" layoutY="-1.0" prefHeight="30.0" prefWidth="72.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../../resources/plus.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView GridPane.columnIndex="1">
+                                 <image>
+                                    <Image url="@../../resources/pencil.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView GridPane.columnIndex="2">
+                                 <image>
+                                    <Image url="@../../resources/trash.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EBEBEB;" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="21.0" layoutY="14.0" text="Thermometer" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="9.0" layoutY="49.0" prefHeight="170.0" prefWidth="307.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="60.0">
+                           <children>
+                              <Label text="Name:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Hersteller:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Temperatur:" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Modell:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Seriennummer:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="NAME" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="HERSTELLER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="MODELL" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="SERIENNUMMER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="TEMPERATUR" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <ImageView fitHeight="164.0" fitWidth="72.0" layoutX="374.0" layoutY="60.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="60.0">
+                           <image>
+                              <Image url="@../../resources/thermometer.png" />
+                           </image>
+                        </ImageView>
+                        <GridPane layoutX="217.0" layoutY="-1.0" prefHeight="30.0" prefWidth="72.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../../resources/plus.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView GridPane.columnIndex="1">
+                                 <image>
+                                    <Image url="@../../resources/pencil.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView GridPane.columnIndex="2">
+                                 <image>
+                                    <Image url="@../../resources/trash.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EBEBEB;" GridPane.columnIndex="1">
+                     <children>
+                        <Label layoutX="21.0" layoutY="14.0" text="Rollläden" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="9.0" layoutY="49.0" prefHeight="170.0" prefWidth="307.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="60.0">
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <ImageView fitHeight="143.0" fitWidth="106.0" layoutX="360.0" layoutY="49.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="49.0">
+                           <image>
+                              <Image url="@../../resources/shutter.png" />
+                           </image>
+                        </ImageView>
+                        <GridPane layoutX="217.0" layoutY="-1.0" prefHeight="30.0" prefWidth="72.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../../resources/plus.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView GridPane.columnIndex="1">
+                                 <image>
+                                    <Image url="@../../resources/pencil.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView GridPane.columnIndex="2">
+                                 <image>
+                                    <Image url="@../../resources/trash.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane layoutX="271.0" layoutY="192.0" prefHeight="200.0" prefWidth="356.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="60.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="102.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="64.0" minWidth="10.0" prefWidth="50.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Hersteller:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Modell:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Seriennummer:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Position:" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Name:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="NAME" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="NAME" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="NAME" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="NAME" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="HRST" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="HRST" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="HRST" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="HRST" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="MDL" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="MDL" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="MDL" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="MDL" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="SERNR" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="SERNR" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="SERNR" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="SERNR" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="POS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="POS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="POS" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="POS" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <ImageView GridPane.halignment="RIGHT">
+                                       <image>
+                                          <Image url="@../../resources/arrow-circle-up.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets right="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                       <image>
+                                          <Image url="@../../resources/arrow-circle-down.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets left="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <children>
+                                    <ImageView GridPane.halignment="RIGHT">
+                                       <image>
+                                          <Image url="@../../resources/arrow-circle-up.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets right="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                       <image>
+                                          <Image url="@../../resources/arrow-circle-down.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets left="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                 <children>
+                                    <ImageView GridPane.halignment="RIGHT">
+                                       <image>
+                                          <Image url="@../../resources/arrow-circle-up.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets right="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                       <image>
+                                          <Image url="@../../resources/arrow-circle-down.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets left="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="4" GridPane.rowIndex="5">
+                                 <children>
+                                    <ImageView GridPane.halignment="RIGHT">
+                                       <image>
+                                          <Image url="@../../resources/arrow-circle-up.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets right="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                       <image>
+                                          <Image url="@../../resources/arrow-circle-down.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets left="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                              <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <children>
+                                    <ImageView GridPane.halignment="RIGHT">
+                                       <image>
+                                          <Image url="@../../resources/angle-double-up.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets right="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                       <image>
+                                          <Image url="@../../resources/angle-double-down.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets left="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                              <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <children>
+                                    <ImageView GridPane.halignment="RIGHT">
+                                       <image>
+                                          <Image url="@../../resources/angle-double-up.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets right="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                       <image>
+                                          <Image url="@../../resources/angle-double-down.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets left="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                              <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                                 <children>
+                                    <ImageView GridPane.halignment="RIGHT">
+                                       <image>
+                                          <Image url="@../../resources/angle-double-up.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets right="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                       <image>
+                                          <Image url="@../../resources/angle-double-down.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets left="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                              <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                                 <children>
+                                    <ImageView GridPane.halignment="RIGHT">
+                                       <image>
+                                          <Image url="@../../resources/angle-double-up.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets right="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                       <image>
+                                          <Image url="@../../resources/angle-double-down.png" />
+                                       </image>
+                                       <GridPane.margin>
+                                          <Insets left="3.0" />
+                                       </GridPane.margin>
+                                    </ImageView>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="143.0" layoutY="15.0" prefHeight="30.0" prefWidth="46.0" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../../resources/angle-double-up.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView GridPane.columnIndex="1">
+                                 <image>
+                                    <Image url="@../../resources/angle-double-down.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                     </children>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EBEBEB;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="21.0" layoutY="14.0" text="Wetterstation" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="9.0" layoutY="49.0" prefHeight="170.0" prefWidth="307.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="60.0">
+                           <children>
+                              <Label text="Name:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Hersteller:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Modell:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Seriennummer:" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="NAME" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="HERSTELLER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="MODELL" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="SERIENNUMMER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="373.0" layoutY="85.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="85.0">
+                           <image>
+                              <Image url="@../../resources/wuStationIcon.png" />
+                           </image>
+                        </ImageView>
+                        <GridPane layoutX="217.0" layoutY="-1.0" prefHeight="30.0" prefWidth="72.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../../resources/plus.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView GridPane.columnIndex="1">
+                                 <image>
+                                    <Image url="@../../resources/pencil.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView GridPane.columnIndex="2">
+                                 <image>
+                                    <Image url="@../../resources/trash.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane layoutX="263.0" layoutY="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="00.00 °C" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="0000 hPa" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="00.00 l/m²" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="00.00 km/h" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Temperatur" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Luftdruck" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Niederschlag" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Windgeschwindigkeit" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </AnchorPane>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
