@@ -22,7 +22,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         parentRoot = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(parentRoot, 300, 275));
+        primaryStage.setScene(new Scene(parentRoot, 1000, 600));
         primaryStage.show();
 
         SmartHomeManagerWebServices smartHomeManagerWebServicesPort = new SmartHomeManagerWebServiceDescriptorService().getSmartHomeManagerWebServicesPort();
@@ -39,9 +39,5 @@ public class Main extends Application {
 
         //Read and print logs
         StringArray array = smartHomeManagerWebServicesPort.readLogs(o,10);
-
-        for (String item: array.getItem()) {
-            System.out.println(item);
-        }
     }
 }
