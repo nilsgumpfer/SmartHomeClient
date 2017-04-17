@@ -26,6 +26,325 @@ public interface SmartHomeManagerWebServices {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getMessageRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getMessageResponse")
+    public String getMessage(
+        @WebParam(name = "arg0", partName = "arg0")
+        ResponseCode arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.WeatherStationTransferObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirHumidityRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirHumidityResponse")
+    public WeatherStationTransferObject getAirHumidity(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.WeatherStationTransferObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirPressureRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirPressureResponse")
+    public WeatherStationTransferObject getAirPressure(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.UserTransferObjectArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAllUserDataRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAllUserDataResponse")
+    public UserTransferObjectArray getAllUserData(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.UserTransferObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getUserDataRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getUserDataResponse")
+    public UserTransferObject getUserData(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        UserTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.StringArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/readLogsRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/readLogsResponse")
+    public StringArray readLogs(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        int arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/loginRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/loginResponse")
+    public CommandResponseObject login(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutResponse")
+    public CommandResponseObject logout(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        UserTransferObject arg1);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getServerInfoRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getServerInfoResponse")
+    public String getServerInfo();
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createHeatingRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createHeatingResponse")
+    public CommandResponseObject createHeating(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        HeatingTransferObject arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteHeatingRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteHeatingResponse")
+    public CommandResponseObject deleteHeating(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/switchHeatingOnRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/switchHeatingOnResponse")
+    public CommandResponseObject switchHeatingOn(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/switchHeatingOffRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/switchHeatingOffResponse")
+    public CommandResponseObject switchHeatingOff(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.HeatingTransferObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getHeatingDataRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getHeatingDataResponse")
+    public HeatingTransferObject getHeatingData(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createShutterRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createShutterResponse")
+    public CommandResponseObject createShutter(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        ShutterTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteShutterRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteShutterResponse")
+    public CommandResponseObject deleteShutter(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        ShutterTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveShutterUpRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveShutterUpResponse")
+    public CommandResponseObject moveShutterUp(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        ShutterTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveShutterDownRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveShutterDownResponse")
+    public CommandResponseObject moveShutterDown(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        ShutterTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.ShutterTransferObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getShutterDataRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getShutterDataResponse")
+    public ShutterTransferObject getShutterData(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        ShutterTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createUserRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createUserResponse")
+    public CommandResponseObject createUser(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        UserTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteUserRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteUserResponse")
+    public CommandResponseObject deleteUser(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        UserTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/alterUserRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/alterUserResponse")
+    public CommandResponseObject alterUser(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        UserTransferObject arg1);
+
+    /**
+     * 
      * @param arg1
      * @param arg0
      * @return
@@ -57,14 +376,59 @@ public interface SmartHomeManagerWebServices {
      * 
      * @param arg0
      * @return
-     *     returns java.lang.String
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveAllShuttersUpRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveAllShuttersUpResponse")
+    public CommandResponseObject moveAllShuttersUp(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveAllShuttersDownRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveAllShuttersDownResponse")
+    public CommandResponseObject moveAllShuttersDown(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.ShutterTransferObject
      */
     @WebMethod
     @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getShutterPositionRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getShutterPositionResponse")
-    public String getShutterPosition(
+    public ShutterTransferObject getShutterPosition(
         @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        ShutterTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.ShutterTransferObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/setShutterPositionRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/setShutterPositionResponse")
+    public ShutterTransferObject setShutterPosition(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        ShutterTransferObject arg1);
 
     /**
      * 
@@ -210,261 +574,6 @@ public interface SmartHomeManagerWebServices {
      */
     @WebMethod
     @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirHumidityRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirHumidityResponse")
-    public WeatherStationTransferObject getAirHumidity(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getServerInfoRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getServerInfoResponse")
-    public String getServerInfo();
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createHeatingRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createHeatingResponse")
-    public CommandResponseObject createHeating(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        HeatingTransferObject arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteHeatingRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteHeatingResponse")
-    public CommandResponseObject deleteHeating(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/switchHeatingOnRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/switchHeatingOnResponse")
-    public CommandResponseObject switchHeatingOn(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/switchHeatingOffRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/switchHeatingOffResponse")
-    public CommandResponseObject switchHeatingOff(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.HeatingTransferObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getHeatingDataRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getHeatingDataResponse")
-    public HeatingTransferObject getHeatingData(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createShutterRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createShutterResponse")
-    public CommandResponseObject createShutter(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        ShutterTransferObject arg1);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteShutterRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteShutterResponse")
-    public CommandResponseObject deleteShutter(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        ShutterTransferObject arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveShuttersUpRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveShuttersUpResponse")
-    public CommandResponseObject moveShuttersUp(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveShuttersDownRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/moveShuttersDownResponse")
-    public CommandResponseObject moveShuttersDown(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.ShutterTransferObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getShutterDataRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getShutterDataResponse")
-    public ShutterTransferObject getShutterData(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        ShutterTransferObject arg1);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createUserRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/createUserResponse")
-    public CommandResponseObject createUser(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        UserTransferObject arg1);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteUserRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteUserResponse")
-    public CommandResponseObject deleteUser(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        UserTransferObject arg1);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/alterUserRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/alterUserResponse")
-    public CommandResponseObject alterUser(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        UserTransferObject arg1);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.UserTransferObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getUserDataRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getUserDataResponse")
-    public UserTransferObject getUserData(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        UserTransferObject arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.UserTransferObjectArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAllUserDataRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAllUserDataResponse")
-    public UserTransferObjectArray getAllUserData(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.WeatherStationTransferObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirPressureRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getAirPressureResponse")
-    public WeatherStationTransferObject getAirPressure(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.WeatherStationTransferObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getWindVelocityRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/getWindVelocityResponse")
     public WeatherStationTransferObject getWindVelocity(
         @WebParam(name = "arg0", partName = "arg0")
@@ -472,60 +581,15 @@ public interface SmartHomeManagerWebServices {
 
     /**
      * 
+     * @param arg0
      * @return
      *     returns connection.webservices.consumer.stubs.CommandResponseObject
      */
     @WebMethod
     @WebResult(partName = "return")
     @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/undoLastCommandRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/undoLastCommandResponse")
-    public CommandResponseObject undoLastCommand();
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/loginRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/loginResponse")
-    public CommandResponseObject login(
+    public CommandResponseObject undoLastCommand(
         @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        UserTransferObject arg1);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutResponse")
-    public CommandResponseObject logout(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        UserTransferObject arg1);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.StringArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/readLogsRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/readLogsResponse")
-    public StringArray readLogs(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        int arg1);
+        UserTransferObject arg0);
 
 }

@@ -1,9 +1,6 @@
 package sample;
 
-import connection.webservices.consumer.stubs.SmartHomeManagerWebServiceDescriptorService;
-import connection.webservices.consumer.stubs.SmartHomeManagerWebServices;
-import connection.webservices.consumer.stubs.StringArray;
-import connection.webservices.consumer.stubs.UserTransferObject;
+import connection.webservices.consumer.stubs.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,10 +27,17 @@ public class Main extends Application {
 
         SmartHomeManagerWebServices service = new SmartHomeManagerWebServiceDescriptorService().getSmartHomeManagerWebServicesPort();
 
-        //System.out.printf( "Dein BMI ist %.1f%n", service.bodyMassIndex(183,74));
+        //Object for authorization
         UserTransferObject o = new UserTransferObject();
-        o.setInt1(17);
-        o.setVar1("Das ist ein relativ langer Text - nicht.");
+
+        //Test some stuff..
+        //System.out.println("" + service.getMessage(ResponseCode.SHUTTER_COULD_NOT_BE_CREATED));
+
+        CommandResponseObject responseObject = service.moveShutterUp(o, new ShutterTransferObject());
+        System.out.println(responseObject.getMessage());
+        //service.login(o);
+
+        //Read and print logs
         StringArray array = service.readLogs(o,1);
 
         for (String item: array.getItem()) {

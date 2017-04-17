@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "SmartHomeManagerWebServiceDescriptorService", targetNamespace = "http://wsprovider.connection.global.smarthome.thm.de/", wsdlLocation = "http://localhost:8080/services?wsdl")
+@WebServiceClient(name = "SmartHomeManagerWebServiceDescriptorService", targetNamespace = "http://wsprovider.connection.global.smarthome.thm.de/", wsdlLocation = "http://localhost:8080/SmartHomeManagerWebServices?wsdl")
 public class SmartHomeManagerWebServiceDescriptorService
     extends Service
 {
@@ -30,7 +30,7 @@ public class SmartHomeManagerWebServiceDescriptorService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/services?wsdl");
+            url = new URL("http://localhost:8080/SmartHomeManagerWebServices?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
