@@ -243,27 +243,27 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Label>
-                              <Label text="NAME" GridPane.columnIndex="1">
+                              <Label fx:id="thermometer_Name" text="NAME" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="HERSTELLER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Label fx:id="thermometer_Manufacturer" text="HERSTELLER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="MODELL" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="thermometer_Model" text="MODELL" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="SERIENNUMMER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Label fx:id="thermometer_Serialnumber" text="SERIENNUMMER" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="TEMPERATUR" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <Label fx:id="thermometer_Temperature" text="TEMPERATUR" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -795,22 +795,22 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Label>
-                              <Label text="NAME" GridPane.columnIndex="1">
+                              <Label fx:id="weatherstation_Name" text="NAME" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="HERSTELLER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Label fx:id="weatherstation_Manufacturer" text="HERSTELLER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="MODELL" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="weatherstation_Model" text="MODELL" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="SERIENNUMMER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Label fx:id="weatherstation_Serialnumber" text="SERIENNUMMER" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -874,22 +874,22 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="00.00 °C" GridPane.halignment="CENTER">
+                              <Label fx:id="weatherstation_Temperature" text="00.00 °C" GridPane.halignment="CENTER">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="0000 hPa" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                              <Label fx:id="weatherstation_Pressure" text="0000 hPa" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="00.00 l/m²" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                              <Label fx:id="weatherstation_Rainfall" text="00.00 l/m²" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="00.00 km/h" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                              <Label fx:id="weatherstation_WindVelocity" text="00.00 km/h" GridPane.columnIndex="3" GridPane.halignment="CENTER">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
