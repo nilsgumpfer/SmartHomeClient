@@ -50,14 +50,14 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <ImageView GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="undoButton" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../resources/back-left.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
-            <ImageView fitHeight="40.0" fitWidth="43.0">
+            <ImageView fx:id="connectionIndicatorImage" fitHeight="40.0" fitWidth="43.0">
                <image>
                   <Image url="@../../resources/smarthome.png" />
                </image>
@@ -129,27 +129,27 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Label>
-                              <Label text="NAME" GridPane.columnIndex="1">
+                              <Label fx:id="heating_Name" text="NAME" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="HERSTELLER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Label fx:id="heating_Manufacturer" text="HERSTELLER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="MODELL" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="heating_Model" text="MODELL" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="SERIENNUMMER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Label fx:id="heating_Serialnumber" text="SERIENNUMMER" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="TEMPERATUR" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <Label fx:id="heating_Temperature" text="TEMPERATUR" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -159,14 +159,14 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="MODUS" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                              <Label fx:id="heating_Mode" text="MODUS" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
                            </children>
                         </GridPane>
-                        <ImageView fitHeight="164.0" fitWidth="72.0" layoutX="359.0" layoutY="35.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="60.0">
+                        <ImageView fx:id="heating_DeviceImage" fitHeight="164.0" fitWidth="72.0" layoutX="359.0" layoutY="35.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="60.0">
                            <image>
                               <Image url="@../../resources/Vitorondens.png" />
                            </image>
@@ -181,17 +181,17 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ImageView>
+                              <ImageView fx:id="heating_AddDeviceButton">
                                  <image>
                                     <Image url="@../../resources/plus.png" />
                                  </image>
                               </ImageView>
-                              <ImageView GridPane.columnIndex="1">
+                              <ImageView fx:id="heating_EditDeviceButton" GridPane.columnIndex="1">
                                  <image>
                                     <Image url="@../../resources/pencil.png" />
                                  </image>
                               </ImageView>
-                              <ImageView GridPane.columnIndex="2">
+                              <ImageView fx:id="heating_DeleteDeviceButton" GridPane.columnIndex="2">
                                  <image>
                                     <Image url="@../../resources/trash.png" />
                                  </image>
@@ -283,24 +283,24 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                         </GridPane>
-                        <ImageView fitHeight="164.0" fitWidth="72.0" layoutX="374.0" layoutY="60.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="60.0">
+                        <ImageView fx:id="thermometer_DeviceImage" fitHeight="164.0" fitWidth="72.0" layoutX="374.0" layoutY="60.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="60.0">
                            <image>
                               <Image url="@../../resources/thermometer.png" />
                            </image>
                         </ImageView>
                         <GridPane layoutX="217.0" layoutY="-1.0" prefHeight="30.0" prefWidth="72.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <children>
-                              <ImageView>
+                              <ImageView fx:id="thermometer_AddDeviceButton">
                                  <image>
                                     <Image url="@../../resources/plus.png" />
                                  </image>
                               </ImageView>
-                              <ImageView GridPane.columnIndex="1">
+                              <ImageView fx:id="thermometer_EditDeviceButton" GridPane.columnIndex="1">
                                  <image>
                                     <Image url="@../../resources/pencil.png" />
                                  </image>
                               </ImageView>
-                              <ImageView GridPane.columnIndex="2">
+                              <ImageView fx:id="thermometer_DeleteDeviceButton" GridPane.columnIndex="2">
                                  <image>
                                     <Image url="@../../resources/trash.png" />
                                  </image>
@@ -341,24 +341,24 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                         </GridPane>
-                        <ImageView fitHeight="143.0" fitWidth="106.0" layoutX="360.0" layoutY="49.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="49.0">
+                        <ImageView fx:id="shutter_DeviceImage" fitHeight="143.0" fitWidth="106.0" layoutX="360.0" layoutY="49.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="49.0">
                            <image>
                               <Image url="@../../resources/shutter.png" />
                            </image>
                         </ImageView>
                         <GridPane layoutX="217.0" layoutY="-1.0" prefHeight="30.0" prefWidth="72.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <children>
-                              <ImageView>
+                              <ImageView fx:id="shutter_AddDeviceButton">
                                  <image>
                                     <Image url="@../../resources/plus.png" />
                                  </image>
                               </ImageView>
-                              <ImageView GridPane.columnIndex="1">
+                              <ImageView fx:id="shutter_EditDeviceButton" GridPane.columnIndex="1">
                                  <image>
                                     <Image url="@../../resources/pencil.png" />
                                  </image>
                               </ImageView>
-                              <ImageView GridPane.columnIndex="2">
+                              <ImageView fx:id="shutter_DeleteDeviceButton" GridPane.columnIndex="2">
                                  <image>
                                     <Image url="@../../resources/trash.png" />
                                  </image>
@@ -416,102 +416,102 @@
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="NAME" GridPane.columnIndex="1">
+                              <Label fx:id="shutter_Name1" text="NAME" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="NAME" GridPane.columnIndex="2">
+                              <Label fx:id="shutter_Name2" text="NAME" GridPane.columnIndex="2">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="NAME" GridPane.columnIndex="3">
+                              <Label fx:id="shutter_Name3" text="NAME" GridPane.columnIndex="3">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="NAME" GridPane.columnIndex="4">
+                              <Label fx:id="shutter_Name4" text="NAME" GridPane.columnIndex="4">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="HRST" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Label fx:id="shutter_Manufacturer1" text="HRST" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="HRST" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                              <Label fx:id="shutter_Manufacturer2" text="HRST" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="HRST" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                              <Label fx:id="shutter_Manufacturer3" text="HRST" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="HRST" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                              <Label fx:id="shutter_Manufacturer4" text="HRST" GridPane.columnIndex="4" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="MDL" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="shutter_Model1" text="MDL" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="MDL" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                              <Label fx:id="shutter_Model2" text="MDL" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="MDL" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                              <Label fx:id="shutter_Model3" text="MDL" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="MDL" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                              <Label fx:id="shutter_Model4" text="MDL" GridPane.columnIndex="4" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="SERNR" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Label fx:id="shutter_Serialnumber1" text="SERNR" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="SERNR" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                              <Label fx:id="shutter_Serialnumber2" text="SERNR" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="SERNR" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                              <Label fx:id="shutter_Serialnumber3" text="SERNR" GridPane.columnIndex="3" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="SERNR" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                              <Label fx:id="shutter_Serialnumber4" text="SERNR" GridPane.columnIndex="4" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="POS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                              <Label fx:id="shutter_Position1" text="POS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="POS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                              <Label fx:id="shutter_Position2" text="POS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="POS" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                              <Label fx:id="shutter_Position3" text="POS" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label text="POS" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                              <Label fx:id="shutter_Position4" text="POS" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -525,7 +525,7 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <ImageView GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_StepUp1" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-up.png" />
                                        </image>
@@ -533,7 +533,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_StepDown1" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-down.png" />
                                        </image>
@@ -545,7 +545,7 @@
                               </GridPane>
                               <GridPane GridPane.columnIndex="2" GridPane.rowIndex="5">
                                  <children>
-                                    <ImageView GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_StepUp2" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-up.png" />
                                        </image>
@@ -553,7 +553,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_StepDown2" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-down.png" />
                                        </image>
@@ -572,7 +572,7 @@
                               </GridPane>
                               <GridPane GridPane.columnIndex="3" GridPane.rowIndex="5">
                                  <children>
-                                    <ImageView GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_StepUp3" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-up.png" />
                                        </image>
@@ -580,7 +580,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_StepDow3" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-down.png" />
                                        </image>
@@ -599,7 +599,7 @@
                               </GridPane>
                               <GridPane GridPane.columnIndex="4" GridPane.rowIndex="5">
                                  <children>
-                                    <ImageView GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_StepUp4" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-up.png" />
                                        </image>
@@ -607,7 +607,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_StepDow4" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-down.png" />
                                        </image>
@@ -626,7 +626,7 @@
                               </GridPane>
                               <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                  <children>
-                                    <ImageView GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_MoveUp1" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/angle-double-up.png" />
                                        </image>
@@ -634,7 +634,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_MoveDown1" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/angle-double-down.png" />
                                        </image>
@@ -653,7 +653,7 @@
                               </GridPane>
                               <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                  <children>
-                                    <ImageView GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_MoveUp2" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/angle-double-up.png" />
                                        </image>
@@ -661,7 +661,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_MoveDown2" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/angle-double-down.png" />
                                        </image>
@@ -680,7 +680,7 @@
                               </GridPane>
                               <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
                                  <children>
-                                    <ImageView GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_MoveUp3" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/angle-double-up.png" />
                                        </image>
@@ -688,7 +688,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_MoveDown3" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/angle-double-down.png" />
                                        </image>
@@ -707,7 +707,7 @@
                               </GridPane>
                               <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
                                  <children>
-                                    <ImageView GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_MoveUp4" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/angle-double-up.png" />
                                        </image>
@@ -715,7 +715,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_MoveDown4" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/angle-double-down.png" />
                                        </image>
@@ -743,12 +743,12 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ImageView>
+                              <ImageView fx:id="shutter_CollectiveUpButton">
                                  <image>
                                     <Image url="@../../resources/angle-double-up.png" />
                                  </image>
                               </ImageView>
-                              <ImageView GridPane.columnIndex="1">
+                              <ImageView fx:id="shutter_CollectiveDownButton" GridPane.columnIndex="1">
                                  <image>
                                     <Image url="@../../resources/angle-double-down.png" />
                                  </image>
@@ -830,24 +830,24 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                         </GridPane>
-                        <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="373.0" layoutY="85.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="85.0">
+                        <ImageView fx:id="weatherstation_DeviceImage" fitHeight="90.0" fitWidth="90.0" layoutX="373.0" layoutY="85.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="85.0">
                            <image>
                               <Image url="@../../resources/wuStationIcon.png" />
                            </image>
                         </ImageView>
                         <GridPane layoutX="217.0" layoutY="-1.0" prefHeight="30.0" prefWidth="72.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <children>
-                              <ImageView>
+                              <ImageView fx:id="weatherstation_AddDeviceButton">
                                  <image>
                                     <Image url="@../../resources/plus.png" />
                                  </image>
                               </ImageView>
-                              <ImageView GridPane.columnIndex="1">
+                              <ImageView fx:id="weatherstation_EditDeviceButton" GridPane.columnIndex="1">
                                  <image>
                                     <Image url="@../../resources/pencil.png" />
                                  </image>
                               </ImageView>
-                              <ImageView GridPane.columnIndex="2">
+                              <ImageView fx:id="weatherstation_DeleteDeviceButton" GridPane.columnIndex="2">
                                  <image>
                                     <Image url="@../../resources/trash.png" />
                                  </image>
