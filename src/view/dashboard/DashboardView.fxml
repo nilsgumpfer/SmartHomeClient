@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.dashboard.DashboardController">
    <children>
       <GridPane layoutX="53.0" layoutY="8.0" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -50,7 +50,7 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="undoButton" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                  <ImageView fx:id="undoButton" onMouseReleased="#undoButton_mouseReleased" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                      <image>
                         <Image url="@../../resources/back-left.png" />
                      </image>
@@ -59,7 +59,7 @@
             </GridPane>
             <ImageView fx:id="connectionIndicatorImage" fitHeight="40.0" fitWidth="43.0">
                <image>
-                  <Image url="@../../resources/smarthome.png" />
+                  <Image url="@../../resources/connectionIndicator.png" />
                </image>
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -181,21 +181,42 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ImageView fx:id="heating_AddDeviceButton">
+                              <ImageView fx:id="heating_AddDeviceButton" onMouseReleased="#heating_AddDeviceButton_mouseReleased">
                                  <image>
                                     <Image url="@../../resources/plus.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="heating_EditDeviceButton" GridPane.columnIndex="1">
+                              <ImageView fx:id="heating_EditDeviceButton" onMouseReleased="#heating_EditDeviceButton_mouseReleased" GridPane.columnIndex="1">
                                  <image>
                                     <Image url="@../../resources/pencil.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="heating_DeleteDeviceButton" GridPane.columnIndex="2">
+                              <ImageView fx:id="heating_DeleteDeviceButton" onMouseReleased="#heating_DeleteDeviceButton_mouseReleased" GridPane.columnIndex="2">
                                  <image>
                                     <Image url="@../../resources/trash.png" />
                                  </image>
                               </ImageView>
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="131.0" layoutY="15.0" prefHeight="30.0" prefWidth="90.0" AnchorPane.leftAnchor="131.0" AnchorPane.topAnchor="15.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="39.0" minWidth="10.0" prefWidth="24.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="66.0" minWidth="10.0" prefWidth="66.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ImageView fx:id="heating_PowerButton" onMouseReleased="#heating_PowerButton_mouseReleased">
+                                 <image>
+                                    <Image url="@../../resources/power-off.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="heating_PowerState" text="Eingeschaltet" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </GridPane>
                      </children>
@@ -290,17 +311,17 @@
                         </ImageView>
                         <GridPane layoutX="217.0" layoutY="-1.0" prefHeight="30.0" prefWidth="72.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <children>
-                              <ImageView fx:id="thermometer_AddDeviceButton">
+                              <ImageView fx:id="thermometer_AddDeviceButton" onMouseReleased="#thermometer_AddDeviceButton_mouseReleased">
                                  <image>
                                     <Image url="@../../resources/plus.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="thermometer_EditDeviceButton" GridPane.columnIndex="1">
+                              <ImageView fx:id="thermometer_EditDeviceButton" onMouseReleased="#thermometer_EditDeviceButton_mouseReleased" GridPane.columnIndex="1">
                                  <image>
                                     <Image url="@../../resources/pencil.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="thermometer_DeleteDeviceButton" GridPane.columnIndex="2">
+                              <ImageView fx:id="thermometer_DeleteDeviceButton" onMouseReleased="#thermometer_DeleteDeviceButton_mouseReleased" GridPane.columnIndex="2">
                                  <image>
                                     <Image url="@../../resources/trash.png" />
                                  </image>
@@ -348,17 +369,17 @@
                         </ImageView>
                         <GridPane layoutX="217.0" layoutY="-1.0" prefHeight="30.0" prefWidth="72.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <children>
-                              <ImageView fx:id="shutter_AddDeviceButton">
+                              <ImageView fx:id="shutter_AddDeviceButton" onMouseReleased="#shutter_AddDeviceButton_mouseReleased">
                                  <image>
                                     <Image url="@../../resources/plus.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="shutter_EditDeviceButton" GridPane.columnIndex="1">
+                              <ImageView fx:id="shutter_EditDeviceButton" onMouseReleased="#shutter_EditDeviceButton_mouseReleased" GridPane.columnIndex="1">
                                  <image>
                                     <Image url="@../../resources/pencil.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="shutter_DeleteDeviceButton" GridPane.columnIndex="2">
+                              <ImageView fx:id="shutter_DeleteDeviceButton" onMouseReleased="#shutter_DeleteDeviceButton_mouseReleased" GridPane.columnIndex="2">
                                  <image>
                                     <Image url="@../../resources/trash.png" />
                                  </image>
@@ -525,7 +546,7 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <ImageView fx:id="shutter_StepUp1" GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_StepUp1" onMouseReleased="#shutter_StepUp1_mouseReleased" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-up.png" />
                                        </image>
@@ -533,7 +554,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView fx:id="shutter_StepDown1" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_StepDown1" onMouseReleased="#shutter_StepDown1_mouseReleased" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-down.png" />
                                        </image>
@@ -545,7 +566,7 @@
                               </GridPane>
                               <GridPane GridPane.columnIndex="2" GridPane.rowIndex="5">
                                  <children>
-                                    <ImageView fx:id="shutter_StepUp2" GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_StepUp2" onMouseReleased="#shutter_StepUp2_mouseReleased" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-up.png" />
                                        </image>
@@ -553,7 +574,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView fx:id="shutter_StepDown2" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_StepDown2" onMouseReleased="#shutter_StepDown2_mouseReleased" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-down.png" />
                                        </image>
@@ -572,7 +593,7 @@
                               </GridPane>
                               <GridPane GridPane.columnIndex="3" GridPane.rowIndex="5">
                                  <children>
-                                    <ImageView fx:id="shutter_StepUp3" GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_StepUp3" onMouseReleased="#shutter_StepUp3_mouseReleased" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-up.png" />
                                        </image>
@@ -580,7 +601,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView fx:id="shutter_StepDow3" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_StepDow3" onMouseReleased="#shutter_StepDown3_mouseReleased" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-down.png" />
                                        </image>
@@ -599,7 +620,7 @@
                               </GridPane>
                               <GridPane GridPane.columnIndex="4" GridPane.rowIndex="5">
                                  <children>
-                                    <ImageView fx:id="shutter_StepUp4" GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_StepUp4" onMouseReleased="#shutter_StepUp4_mouseReleased" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-up.png" />
                                        </image>
@@ -607,7 +628,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView fx:id="shutter_StepDow4" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_StepDow4" onMouseReleased="#shutter_StepDown4_mouseReleased" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/arrow-circle-down.png" />
                                        </image>
@@ -626,7 +647,7 @@
                               </GridPane>
                               <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                  <children>
-                                    <ImageView fx:id="shutter_MoveUp1" GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_MoveUp1" onMouseReleased="#shutter_MoveUp1_mouseReleased" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/angle-double-up.png" />
                                        </image>
@@ -634,7 +655,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView fx:id="shutter_MoveDown1" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_MoveDown1" onMouseReleased="#shutter_MoveDown1_mouseReleased" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/angle-double-down.png" />
                                        </image>
@@ -653,7 +674,7 @@
                               </GridPane>
                               <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                  <children>
-                                    <ImageView fx:id="shutter_MoveUp2" GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_MoveUp2" onMouseReleased="#shutter_MoveUp2_mouseReleased" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/angle-double-up.png" />
                                        </image>
@@ -661,7 +682,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView fx:id="shutter_MoveDown2" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_MoveDown2" onMouseReleased="#shutter_MoveDown2_mouseReleased" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/angle-double-down.png" />
                                        </image>
@@ -680,7 +701,7 @@
                               </GridPane>
                               <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
                                  <children>
-                                    <ImageView fx:id="shutter_MoveUp3" GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_MoveUp3" onMouseReleased="#shutter_MoveUp3_mouseReleased" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/angle-double-up.png" />
                                        </image>
@@ -688,7 +709,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView fx:id="shutter_MoveDown3" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_MoveDown3" onMouseReleased="#shutter_MoveDown3_mouseReleased" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/angle-double-down.png" />
                                        </image>
@@ -707,7 +728,7 @@
                               </GridPane>
                               <GridPane prefHeight="30.0" prefWidth="46.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
                                  <children>
-                                    <ImageView fx:id="shutter_MoveUp4" GridPane.halignment="RIGHT">
+                                    <ImageView fx:id="shutter_MoveUp4" onMouseReleased="#shutter_MoveUp4_mouseReleased" GridPane.halignment="RIGHT">
                                        <image>
                                           <Image url="@../../resources/angle-double-up.png" />
                                        </image>
@@ -715,7 +736,7 @@
                                           <Insets right="3.0" />
                                        </GridPane.margin>
                                     </ImageView>
-                                    <ImageView fx:id="shutter_MoveDown4" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                                    <ImageView fx:id="shutter_MoveDown4" onMouseReleased="#shutter_MoveDown4_mouseReleased" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                                        <image>
                                           <Image url="@../../resources/angle-double-down.png" />
                                        </image>
@@ -734,7 +755,7 @@
                               </GridPane>
                            </children>
                         </GridPane>
-                        <GridPane layoutX="143.0" layoutY="15.0" prefHeight="30.0" prefWidth="46.0" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="10.0">
+                        <GridPane layoutX="143.0" layoutY="15.0" prefHeight="30.0" prefWidth="46.0" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="15.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -743,12 +764,12 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ImageView fx:id="shutter_CollectiveUpButton">
+                              <ImageView fx:id="shutter_CollectiveUpButton" onMouseReleased="#shutter_CollectiveUpButton_mouseReleased">
                                  <image>
                                     <Image url="@../../resources/angle-double-up.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="shutter_CollectiveDownButton" GridPane.columnIndex="1">
+                              <ImageView fx:id="shutter_CollectiveDownButton" onMouseReleased="#shutter_CollectiveDownButton_mouseReleased" GridPane.columnIndex="1">
                                  <image>
                                     <Image url="@../../resources/angle-double-down.png" />
                                  </image>
@@ -837,17 +858,17 @@
                         </ImageView>
                         <GridPane layoutX="217.0" layoutY="-1.0" prefHeight="30.0" prefWidth="72.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <children>
-                              <ImageView fx:id="weatherstation_AddDeviceButton">
+                              <ImageView fx:id="weatherstation_AddDeviceButton" onMouseReleased="#weatherstation_AddDeviceButton_mouseReleased">
                                  <image>
                                     <Image url="@../../resources/plus.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="weatherstation_EditDeviceButton" GridPane.columnIndex="1">
+                              <ImageView fx:id="weatherstation_EditDeviceButton" onMouseReleased="#weatherstation_EditDeviceButton_mouseReleased" GridPane.columnIndex="1">
                                  <image>
                                     <Image url="@../../resources/pencil.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="weatherstation_DeleteDeviceButton" GridPane.columnIndex="2">
+                              <ImageView fx:id="weatherstation_DeleteDeviceButton" onMouseReleased="#weatherstation_DeleteDeviceButton_mouseReleased" GridPane.columnIndex="2">
                                  <image>
                                     <Image url="@../../resources/trash.png" />
                                  </image>
