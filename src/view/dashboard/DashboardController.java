@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import logger.SmartHomeClientLogger;
 
 import static connection.webservices.consumer.stubs.DeviceManufacturer.*;
 
@@ -155,6 +156,9 @@ public class DashboardController {
     private Label weatherstation_WindVelocity;
 
     @FXML
+    private Label statusMessage;
+
+    @FXML
     private ImageView heating_PowerButton;
 
     @FXML
@@ -244,8 +248,23 @@ public class DashboardController {
     private SmartHomeManagerWebServices wsProvider = null;
     private UserTransferObject userTransferObject = new UserTransferObject();
 
-    public void initController(){
 
+    public void initialize(){
+        statusMessage.setText("");
+        heating_PowerState.setText("");
+        heating_Manufacturer.setText("");
+        heating_Temperature.setText("");
+        heating_Name.setText("");
+        heating_Serialnumber.setText("");
+        heating_Mode.setText("");
+        heating_Model.setText("");
+        heating_DeviceImage.setVisible(false);
+
+        shutter_Name1.setText("");
+        shutter_Name2.setVisible(false);
+        shutter_Name3.setVisible(false);
+        shutter_Name4.setVisible(false);
+        shutter_Serialnumber1.setText("");
     }
 
     public void heating_PowerButton_mouseReleased(){
@@ -437,17 +456,7 @@ public class DashboardController {
     }
 
     public void connectionIndicatorImage_mouseReleased(){
-        if(wsProvider==null) {
-            if(testOrEstablishConnection()) {
-                connectionIndicatorImage.setImage(new Image("@../resources"));
-            }
-            else {
-                connectionIndicatorImage.setImage(new Image("@../resources"));
-            }
-        }
-        else {
-            connectionIndicatorImage.setImage(new Image("@../resources"));
-        }
+        testOrEstablishConnection();
     }
 
     public void updateHeatingData(HeatingTransferObject heatingTransferObject){
@@ -505,17 +514,29 @@ public class DashboardController {
     }
 
     public boolean testOrEstablishConnection(){
-        if(wsProvider != null) {
+        //if(wsProvider == null) {
             try {
                 wsProvider = MySmartHomeServiceProvider.getInstance().getPort();
+                logMessage("Verbindung zum SmartHomeManager wurde hergestellt.");
+                connectionIndicatorImage.setImage(new Image("@../../resources/connectionIndicator_connected.png"));
                 return true;
             }
             catch (Exception e) {
                 wsProvider = null;
+                logMessage("Verbindung zum SmartHomeManager konnte nicht hergestellt werden.");
+                connectionIndicatorImage.setImage(new Image("@../../resources/connectionIndicator_disconnected.png"));
                 return false;
             }
-        }
-        else
+       /* }
+        else {
+            SmartHomeClientLogger.log("Verbindung zum SmartHomeManager besteht bereits.");
+            connectionIndicatorImage.setImage(new Image("@../../resources/connectionIndicator_connected.png"));
             return true;
+        }*/
+    }
+
+    public void logMessage(String message){
+        statusMessage.setText(message);
+        SmartHomeClientLogger.log(message);
     }
 }
