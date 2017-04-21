@@ -1,8 +1,12 @@
 package view.dashboard;
 
+import connection.webservices.consumer.stubs.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import static connection.webservices.consumer.stubs.DeviceManufacturer.*;
 
 public class DashboardController {
 
@@ -237,11 +241,18 @@ public class DashboardController {
     @FXML
     private Label heating_Name;
 
+    private SmartHomeManagerWebServices wsProvider = MySmartHomeServiceProvider.getInstance().getPort();
+    private UserTransferObject userTransferObject = new UserTransferObject();
+
     public void initController(){
 
     }
 
     public void heating_PowerButton_mouseReleased(){
+
+
+        wsProvider.switchHeatingOn(userTransferObject);
+
 
     }
 
@@ -300,6 +311,7 @@ public class DashboardController {
     public void shutter_StepDown2_mouseReleased(){
 
     }
+
     public void shutter_StepDown3_mouseReleased(){
 
     }
@@ -365,5 +377,69 @@ public class DashboardController {
 
     public void undoButton_mouseReleased(){
 
+    }
+
+    public void refreshButton_mouseReleased(){
+        ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
+        shutterTransferObject.setShutterID("1");
+
+        updateHeatingData(wsProvider.getHeatingData(userTransferObject));
+        updateShutterData(wsProvider.getShutterData(userTransferObject, shutterTransferObject));
+        updateWeatherstationData(wsProvider.getWeatherStationData(userTransferObject));
+        updateThermometerData(wsProvider.getThermometerData(userTransferObject));
+    }
+
+    public void updateHeatingData(HeatingTransferObject heatingTransferObject){
+        heating_DeviceImage.setVisible(true);
+
+        switch (heatingTransferObject.getManufacturer())
+        {
+            case VIESSMANN:
+                heating_DeviceImage.setImage(new Image("@../../resources/Vitorodens.png"));
+                break;
+            case VAILLANT:
+                heating_DeviceImage.setImage(new Image("@../../resources/VaillantXY.png"));
+                break;
+            case BUDERUS:
+                heating_DeviceImage.setImage(new Image("@../../resources/BuderusXY.png"));
+                break;
+        }
+
+        heating_Manufacturer.setText(heatingTransferObject.getManufacturerT());
+        heating_Model.setText(heatingTransferObject.getModel());
+        heating_Mode.setText(heatingTransferObject.getMode());
+        heating_Serialnumber.setText(heatingTransferObject.getSerialnumber());
+        heating_PowerState.setText(heatingTransferObject.getPowerState());
+        heating_Name.setText(heatingTransferObject.getHeatingName());
+        heating_Temperature.setText(heatingTransferObject.getTemperature() + " " + heatingTransferObject.getTemperatureUnit());
+    }
+
+    public void updateShutterData(ShutterTransferObject shutterTransferObject){
+        shutter_DeviceImage.setVisible(true);
+        shutter_Manufacturer1.setText(shutterTransferObject.getManufacturerT());
+        shutter_Model1.setText(shutterTransferObject.getModel());
+        shutter_Serialnumber1.setText(shutterTransferObject.getSerialnumber());
+        shutter_Name1.setText(shutterTransferObject.getShutterID());
+    }
+
+    public void updateThermometerData(ThermometerTransferObject thermometerTransferObject){
+        thermometer_DeviceImage.setVisible(true);
+        thermometer_Manufacturer.setText(thermometerTransferObject.getManufacturerT());
+        thermometer_Model.setText(thermometerTransferObject.getModel());
+        thermometer_Name.setText(thermometerTransferObject.getName());
+        thermometer_Serialnumber.setText(thermometerTransferObject.getSerialnumber());
+        thermometer_Temperature.setText(thermometerTransferObject.getTemperature() + " " + thermometerTransferObject.getTemperatureUnitT());
+    }
+
+    public void updateWeatherstationData(WeatherStationTransferObject weatherStationTransferObject){
+        weatherstation_DeviceImage.setVisible(true);
+        weatherstation_Manufacturer.setText(weatherStationTransferObject.getManufacturerT());
+        weatherstation_Model.setText(weatherStationTransferObject.getModel());
+        weatherstation_Name.setText(weatherStationTransferObject.getName());
+        weatherstation_Serialnumber.setText(weatherStationTransferObject.getSerialnumber());
+        weatherstation_Temperature.setText(weatherStationTransferObject.getOutdoorTemperature() + " " + weatherStationTransferObject.getOutdoorTemperatureUnitT());
+        weatherstation_Pressure.setText(weatherStationTransferObject.getAirPressure() + " " + weatherStationTransferObject.getAirPressureUnitT());
+        weatherstation_Rainfall.setText(weatherStationTransferObject.getRainfallAmount() + " " + weatherStationTransferObject.getRainfallAmountUnitT());
+        weatherstation_WindVelocity.setText(weatherStationTransferObject.getWindVelocity() + " " + weatherStationTransferObject.getWindVelocityUnitT());
     }
 }
