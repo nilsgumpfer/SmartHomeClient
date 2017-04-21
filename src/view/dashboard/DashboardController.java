@@ -249,134 +249,164 @@ public class DashboardController {
     }
 
     public void heating_PowerButton_mouseReleased(){
+        if (wsProvider.getHeatingData(userTransferObject).getPowerState() == Power.OFF) {
+            CommandResponseObject response = wsProvider.switchHeatingOn(userTransferObject);
 
+            if(response.getResponseCode() == ResponseCode.SWITCHED_ON)
+                heating_PowerState.setText("Eingeschaltet");
+        }
+        else {
+            CommandResponseObject response = wsProvider.switchHeatingOff(userTransferObject);
 
-        wsProvider.switchHeatingOn(userTransferObject);
-
-
+            if(response.getResponseCode() == ResponseCode.SWITCHED_ON)
+                heating_PowerState.setText("Ausgeschaltet");
+        }
     }
 
     public void heating_AddDeviceButton_mouseReleased(){
-
+        //TODO: Open Add-Device-View
     }
 
     public void heating_EditDeviceButton_mouseReleased(){
-
+        //TODO: Open Edit-View
     }
 
     public void heating_DeleteDeviceButton_mouseReleased(){
-
+        //TODO: Delete Device, stop Connection, etc.
     }
 
     public void shutter_CollectiveDownButton_mouseReleased(){
-
+        wsProvider.moveAllShuttersDown(userTransferObject);
+        //TODO: Show Message
     }
 
     public void shutter_CollectiveUpButton_mouseReleased(){
-
+        wsProvider.moveAllShuttersUp(userTransferObject);
+        //TODO: Show Message
     }
 
     public void shutter_AddDeviceButton_mouseReleased(){
-
+        //TODO: Open Add-Device-View
     }
 
     public void shutter_EditDeviceButton_mouseReleased(){
-
+        //TODO: Open Edit-View
     }
 
     public void shutter_DeleteDeviceButton_mouseReleased(){
-
+        //TODO: Delete Device, stop Connection, etc.
     }
 
     public void shutter_StepUp1_mouseReleased(){
+        ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
+        shutterTransferObject.setShutterID("1");
+        shutterTransferObject.setMoveComplete(false);
 
+        wsProvider.moveShutterUp(userTransferObject, shutterTransferObject);
+        //TODO: Show Message
     }
 
     public void shutter_StepUp2_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void shutter_StepUp3_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void shutter_StepUp4_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void shutter_StepDown1_mouseReleased(){
+        ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
+        shutterTransferObject.setShutterID("1");
+        shutterTransferObject.setMoveComplete(false);
 
+        wsProvider.moveShutterDown(userTransferObject, shutterTransferObject);
+        //TODO: Show Message
     }
 
     public void shutter_StepDown2_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void shutter_StepDown3_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void shutter_StepDown4_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void shutter_MoveUp1_mouseReleased(){
+        ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
+        shutterTransferObject.setShutterID("1");
+        shutterTransferObject.setMoveComplete(true);
 
+        wsProvider.moveShutterUp(userTransferObject, shutterTransferObject);
+        //TODO: Show Message
     }
 
     public void shutter_MoveUp2_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void shutter_MoveUp3_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void shutter_MoveUp4_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void shutter_MoveDown1_mouseReleased(){
+        ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
+        shutterTransferObject.setShutterID("1");
+        shutterTransferObject.setMoveComplete(true);
 
+        wsProvider.moveShutterDown(userTransferObject, shutterTransferObject);
+        //TODO: Show Message
     }
 
     public void shutter_MoveDown2_mouseReleased(){
-
+        //TODO: Make this realistic
     }
     public void shutter_MoveDown3_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void shutter_MoveDown4_mouseReleased(){
-
+        //TODO: Make this realistic
     }
 
     public void weatherstation_AddDeviceButton_mouseReleased(){
-
+        //TODO: Open Add-Device-View
     }
 
     public void weatherstation_EditDeviceButton_mouseReleased(){
-
+        //TODO: Open Edit-View
     }
 
     public void weatherstation_DeleteDeviceButton_mouseReleased(){
-
+        //TODO: Delete Device, stop Connection, etc.
     }
 
     public void thermometer_AddDeviceButton_mouseReleased(){
-
+        //TODO: Open Add-Device-View
     }
 
     public void thermometer_EditDeviceButton_mouseReleased(){
-
+        //TODO: Open Edit-View
     }
 
     public void thermometer_DeleteDeviceButton_mouseReleased(){
-
+        //TODO: Delete Device, stop Connection, etc.
     }
 
     public void undoButton_mouseReleased(){
-
+        wsProvider.undoLastCommand(userTransferObject);
+        //TODO: Show message
     }
 
     public void refreshButton_mouseReleased(){
@@ -409,7 +439,7 @@ public class DashboardController {
         heating_Model.setText(heatingTransferObject.getModel());
         heating_Mode.setText(heatingTransferObject.getMode());
         heating_Serialnumber.setText(heatingTransferObject.getSerialnumber());
-        heating_PowerState.setText(heatingTransferObject.getPowerState());
+        heating_PowerState.setText(heatingTransferObject.getPowerStateT());
         heating_Name.setText(heatingTransferObject.getHeatingName());
         heating_Temperature.setText(heatingTransferObject.getTemperature() + " " + heatingTransferObject.getTemperatureUnit());
     }

@@ -38,14 +38,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ShutterTransferObject }
-     * 
-     */
-    public ShutterTransferObject createShutterTransferObject() {
-        return new ShutterTransferObject();
-    }
-
-    /**
      * Create an instance of {@link WeatherStationTransferObject }
      * 
      */
@@ -62,19 +54,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ShutterTransferObjectArray }
-     * 
-     */
-    public ShutterTransferObjectArray createShutterTransferObjectArray() {
-        return new ShutterTransferObjectArray();
-    }
-
-    /**
      * Create an instance of {@link ThermometerTransferObject }
      * 
      */
     public ThermometerTransferObject createThermometerTransferObject() {
         return new ThermometerTransferObject();
+    }
+
+    /**
+     * Create an instance of {@link ShutterTransferObject }
+     * 
+     */
+    public ShutterTransferObject createShutterTransferObject() {
+        return new ShutterTransferObject();
+    }
+
+    /**
+     * Create an instance of {@link ShutterTransferObjectArray }
+     * 
+     */
+    public ShutterTransferObjectArray createShutterTransferObjectArray() {
+        return new ShutterTransferObjectArray();
     }
 
     /**

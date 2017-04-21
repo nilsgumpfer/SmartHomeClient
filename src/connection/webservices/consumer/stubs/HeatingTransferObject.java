@@ -24,7 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="mode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="powerState" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="powerState" type="{http://wsprovider.connection.global.smarthome.thm.de/}power" minOccurs="0"/>
+ *         &lt;element name="powerState_t" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="responseCode" type="{http://wsprovider.connection.global.smarthome.thm.de/}responseCode" minOccurs="0"/>
  *         &lt;element name="serialnumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="temperature" type="{http://www.w3.org/2001/XMLSchema}double"/>
@@ -47,6 +48,7 @@ import javax.xml.bind.annotation.XmlType;
     "mode",
     "model",
     "powerState",
+    "powerStateT",
     "responseCode",
     "serialnumber",
     "temperature",
@@ -63,7 +65,10 @@ public class HeatingTransferObject {
     protected String message;
     protected String mode;
     protected String model;
-    protected String powerState;
+    @XmlSchemaType(name = "string")
+    protected Power powerState;
+    @XmlElement(name = "powerState_t")
+    protected String powerStateT;
     @XmlSchemaType(name = "string")
     protected ResponseCode responseCode;
     protected String serialnumber;
@@ -222,10 +227,10 @@ public class HeatingTransferObject {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Power }
      *     
      */
-    public String getPowerState() {
+    public Power getPowerState() {
         return powerState;
     }
 
@@ -234,11 +239,35 @@ public class HeatingTransferObject {
      * 
      * @param value
      *     allowed object is
+     *     {@link Power }
+     *     
+     */
+    public void setPowerState(Power value) {
+        this.powerState = value;
+    }
+
+    /**
+     * Ruft den Wert der powerStateT-Eigenschaft ab.
+     * 
+     * @return
+     *     possible object is
      *     {@link String }
      *     
      */
-    public void setPowerState(String value) {
-        this.powerState = value;
+    public String getPowerStateT() {
+        return powerStateT;
+    }
+
+    /**
+     * Legt den Wert der powerStateT-Eigenschaft fest.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPowerStateT(String value) {
+        this.powerStateT = value;
     }
 
     /**

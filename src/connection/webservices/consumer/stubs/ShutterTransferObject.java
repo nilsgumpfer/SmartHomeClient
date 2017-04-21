@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="mode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="moveComplete" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="position" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="responseCode" type="{http://wsprovider.connection.global.smarthome.thm.de/}responseCode" minOccurs="0"/>
  *         &lt;element name="serialnumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -42,6 +43,7 @@ import javax.xml.bind.annotation.XmlType;
     "message",
     "mode",
     "model",
+    "moveComplete",
     "position",
     "responseCode",
     "serialnumber",
@@ -56,6 +58,7 @@ public class ShutterTransferObject {
     protected String message;
     protected String mode;
     protected String model;
+    protected boolean moveComplete;
     protected int position;
     @XmlSchemaType(name = "string")
     protected ResponseCode responseCode;
@@ -180,6 +183,22 @@ public class ShutterTransferObject {
      */
     public void setModel(String value) {
         this.model = value;
+    }
+
+    /**
+     * Ruft den Wert der moveComplete-Eigenschaft ab.
+     * 
+     */
+    public boolean isMoveComplete() {
+        return moveComplete;
+    }
+
+    /**
+     * Legt den Wert der moveComplete-Eigenschaft fest.
+     * 
+     */
+    public void setMoveComplete(boolean value) {
+        this.moveComplete = value;
     }
 
     /**
