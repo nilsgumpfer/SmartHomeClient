@@ -241,7 +241,7 @@ public class DashboardController {
     @FXML
     private Label heating_Name;
 
-    private SmartHomeManagerWebServices wsProvider = MySmartHomeServiceProvider.getInstance().getPort();
+    private SmartHomeManagerWebServices wsProvider = null;
     private UserTransferObject userTransferObject = new UserTransferObject();
 
     public void initController(){
@@ -249,17 +249,18 @@ public class DashboardController {
     }
 
     public void heating_PowerButton_mouseReleased(){
-        if (wsProvider.getHeatingData(userTransferObject).getPowerState() == Power.OFF) {
-            CommandResponseObject response = wsProvider.switchHeatingOn(userTransferObject);
+        if(testOrEstablishConnection()) {
+            if (wsProvider.getHeatingData(userTransferObject).getPowerState() == Power.OFF) {
+                CommandResponseObject response = wsProvider.switchHeatingOn(userTransferObject);
 
-            if(response.getResponseCode() == ResponseCode.SWITCHED_ON)
-                heating_PowerState.setText("Eingeschaltet");
-        }
-        else {
-            CommandResponseObject response = wsProvider.switchHeatingOff(userTransferObject);
+                if (response.getResponseCode() == ResponseCode.SWITCHED_ON)
+                    heating_PowerState.setText("Eingeschaltet");
+            } else {
+                CommandResponseObject response = wsProvider.switchHeatingOff(userTransferObject);
 
-            if(response.getResponseCode() == ResponseCode.SWITCHED_ON)
-                heating_PowerState.setText("Ausgeschaltet");
+                if (response.getResponseCode() == ResponseCode.SWITCHED_ON)
+                    heating_PowerState.setText("Ausgeschaltet");
+            }
         }
     }
 
@@ -276,13 +277,17 @@ public class DashboardController {
     }
 
     public void shutter_CollectiveDownButton_mouseReleased(){
-        wsProvider.moveAllShuttersDown(userTransferObject);
-        //TODO: Show Message
+        if(testOrEstablishConnection()) {
+            wsProvider.moveAllShuttersDown(userTransferObject);
+            //TODO: Show Message
+        }
     }
 
     public void shutter_CollectiveUpButton_mouseReleased(){
-        wsProvider.moveAllShuttersUp(userTransferObject);
-        //TODO: Show Message
+        if(testOrEstablishConnection()) {
+            wsProvider.moveAllShuttersUp(userTransferObject);
+            //TODO: Show Message
+        }
     }
 
     public void shutter_AddDeviceButton_mouseReleased(){
@@ -298,12 +303,14 @@ public class DashboardController {
     }
 
     public void shutter_StepUp1_mouseReleased(){
-        ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
-        shutterTransferObject.setShutterID("1");
-        shutterTransferObject.setMoveComplete(false);
+        if(testOrEstablishConnection()) {
+            ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
+            shutterTransferObject.setShutterID("1");
+            shutterTransferObject.setMoveComplete(false);
 
-        wsProvider.moveShutterUp(userTransferObject, shutterTransferObject);
-        //TODO: Show Message
+            wsProvider.moveShutterUp(userTransferObject, shutterTransferObject);
+            //TODO: Show Message
+        }
     }
 
     public void shutter_StepUp2_mouseReleased(){
@@ -319,12 +326,14 @@ public class DashboardController {
     }
 
     public void shutter_StepDown1_mouseReleased(){
-        ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
-        shutterTransferObject.setShutterID("1");
-        shutterTransferObject.setMoveComplete(false);
+        if(testOrEstablishConnection()) {
+            ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
+            shutterTransferObject.setShutterID("1");
+            shutterTransferObject.setMoveComplete(false);
 
-        wsProvider.moveShutterDown(userTransferObject, shutterTransferObject);
-        //TODO: Show Message
+            wsProvider.moveShutterDown(userTransferObject, shutterTransferObject);
+            //TODO: Show Message
+        }
     }
 
     public void shutter_StepDown2_mouseReleased(){
@@ -340,12 +349,14 @@ public class DashboardController {
     }
 
     public void shutter_MoveUp1_mouseReleased(){
-        ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
-        shutterTransferObject.setShutterID("1");
-        shutterTransferObject.setMoveComplete(true);
+        if(testOrEstablishConnection()) {
+            ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
+            shutterTransferObject.setShutterID("1");
+            shutterTransferObject.setMoveComplete(true);
 
-        wsProvider.moveShutterUp(userTransferObject, shutterTransferObject);
-        //TODO: Show Message
+            wsProvider.moveShutterUp(userTransferObject, shutterTransferObject);
+            //TODO: Show Message
+        }
     }
 
     public void shutter_MoveUp2_mouseReleased(){
@@ -361,12 +372,14 @@ public class DashboardController {
     }
 
     public void shutter_MoveDown1_mouseReleased(){
-        ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
-        shutterTransferObject.setShutterID("1");
-        shutterTransferObject.setMoveComplete(true);
+        if(testOrEstablishConnection()) {
+            ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
+            shutterTransferObject.setShutterID("1");
+            shutterTransferObject.setMoveComplete(true);
 
-        wsProvider.moveShutterDown(userTransferObject, shutterTransferObject);
-        //TODO: Show Message
+            wsProvider.moveShutterDown(userTransferObject, shutterTransferObject);
+            //TODO: Show Message
+        }
     }
 
     public void shutter_MoveDown2_mouseReleased(){
@@ -405,18 +418,36 @@ public class DashboardController {
     }
 
     public void undoButton_mouseReleased(){
-        wsProvider.undoLastCommand(userTransferObject);
-        //TODO: Show message
+        if(testOrEstablishConnection()) {
+            wsProvider.undoLastCommand(userTransferObject);
+            //TODO: Show message
+        }
     }
 
     public void refreshButton_mouseReleased(){
-        ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
-        shutterTransferObject.setShutterID("1");
+        if(testOrEstablishConnection()) {
+            ShutterTransferObject shutterTransferObject = new ShutterTransferObject();
+            shutterTransferObject.setShutterID("1");
 
-        updateHeatingData(wsProvider.getHeatingData(userTransferObject));
-        updateShutterData(wsProvider.getShutterData(userTransferObject, shutterTransferObject));
-        updateWeatherstationData(wsProvider.getWeatherStationData(userTransferObject));
-        updateThermometerData(wsProvider.getThermometerData(userTransferObject));
+            updateHeatingData(wsProvider.getHeatingData(userTransferObject));
+            updateShutterData(wsProvider.getShutterData(userTransferObject, shutterTransferObject));
+            updateWeatherstationData(wsProvider.getWeatherStationData(userTransferObject));
+            updateThermometerData(wsProvider.getThermometerData(userTransferObject));
+        }
+    }
+
+    public void connectionIndicatorImage_mouseReleased(){
+        if(wsProvider==null) {
+            if(testOrEstablishConnection()) {
+                connectionIndicatorImage.setImage(new Image("@../resources"));
+            }
+            else {
+                connectionIndicatorImage.setImage(new Image("@../resources"));
+            }
+        }
+        else {
+            connectionIndicatorImage.setImage(new Image("@../resources"));
+        }
     }
 
     public void updateHeatingData(HeatingTransferObject heatingTransferObject){
@@ -471,5 +502,20 @@ public class DashboardController {
         weatherstation_Pressure.setText(weatherStationTransferObject.getAirPressure() + " " + weatherStationTransferObject.getAirPressureUnitT());
         weatherstation_Rainfall.setText(weatherStationTransferObject.getRainfallAmount() + " " + weatherStationTransferObject.getRainfallAmountUnitT());
         weatherstation_WindVelocity.setText(weatherStationTransferObject.getWindVelocity() + " " + weatherStationTransferObject.getWindVelocityUnitT());
+    }
+
+    public boolean testOrEstablishConnection(){
+        if(wsProvider != null) {
+            try {
+                wsProvider = MySmartHomeServiceProvider.getInstance().getPort();
+                return true;
+            }
+            catch (Exception e) {
+                wsProvider = null;
+                return false;
+            }
+        }
+        else
+            return true;
     }
 }
