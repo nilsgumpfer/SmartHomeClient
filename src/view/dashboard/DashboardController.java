@@ -254,7 +254,7 @@ public class DashboardController {
 
 
     public void initialize(){
-        statusMessage.setText("");
+        statusMessage.setText("");/*
         heating_PowerState.setText("");
         heating_Manufacturer.setText("");
         heating_Temperature.setText("");
@@ -269,7 +269,9 @@ public class DashboardController {
         shutter_Name2.setVisible(false);
         shutter_Name3.setVisible(false);
         shutter_Name4.setVisible(false);
-        shutter_Serialnumber1.setText("");
+        shutter_Serialnumber1.setText("");*/
+
+        heating_TemperatureInput.setVisible(false);
     }
 
     public void heating_PowerButton_mouseReleased(){
@@ -492,7 +494,7 @@ public class DashboardController {
 
     public void updateHeatingData(HeatingTransferObject heatingTransferObject){
         heating_DeviceImage.setVisible(true);
-
+/*
         switch (heatingTransferObject.getManufacturer())
         {
             case VIESSMANN:
@@ -504,7 +506,7 @@ public class DashboardController {
             case BUDERUS:
                 heating_DeviceImage.setImage(new Image("@../../resources/BuderusXY.png"));
                 break;
-        }
+        }*/
 
         heating_Manufacturer.setText(heatingTransferObject.getManufacturerT());
         heating_Model.setText(heatingTransferObject.getModel());
@@ -512,7 +514,7 @@ public class DashboardController {
         heating_Serialnumber.setText(heatingTransferObject.getSerialnumber());
         heating_PowerState.setText(heatingTransferObject.getPowerStateT());
         heating_Name.setText(heatingTransferObject.getHeatingName());
-        heating_Temperature.setText(heatingTransferObject.getTemperature() + " " + heatingTransferObject.getTemperatureUnit());
+        heating_Temperature.setText(heatingTransferObject.getTemperature()+"");
     }
 
     public void updateShutterData(ShutterTransferObject shutterTransferObject){

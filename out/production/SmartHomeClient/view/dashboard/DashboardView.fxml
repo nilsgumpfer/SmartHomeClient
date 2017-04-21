@@ -94,7 +94,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EBEBEB;">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                      <children>
                         <Label layoutX="21.0" layoutY="14.0" text="Heizung" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <font>
@@ -243,7 +243,7 @@
                         <DropShadow blurType="ONE_PASS_BOX" />
                      </effect>
                   </AnchorPane>
-                  <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EBEBEB;" GridPane.rowIndex="1">
+                  <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" GridPane.rowIndex="1">
                      <children>
                         <Label layoutX="21.0" layoutY="14.0" text="Thermometer" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <font>
@@ -360,7 +360,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EBEBEB;" GridPane.columnIndex="1">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" GridPane.columnIndex="1">
                      <children>
                         <Label layoutX="21.0" layoutY="14.0" text="Rollläden" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <font>
@@ -800,7 +800,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EBEBEB;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <Label layoutX="21.0" layoutY="14.0" text="Wetterstation" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <font>

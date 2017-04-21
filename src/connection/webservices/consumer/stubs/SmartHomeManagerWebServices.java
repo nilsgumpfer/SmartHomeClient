@@ -94,22 +94,6 @@ public interface SmartHomeManagerWebServices {
 
     /**
      * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.StringArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/readLogsRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/readLogsResponse")
-    public StringArray readLogs(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        int arg1);
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns connection.webservices.consumer.stubs.CommandResponseObject
@@ -120,22 +104,6 @@ public interface SmartHomeManagerWebServices {
     public CommandResponseObject login(
         @WebParam(name = "arg0", partName = "arg0")
         UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutResponse")
-    public CommandResponseObject logout(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        UserTransferObject arg1);
 
     /**
      * 
@@ -345,6 +313,19 @@ public interface SmartHomeManagerWebServices {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteThermometerRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteThermometerResponse")
+    public CommandResponseObject deleteThermometer(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0);
+
+    /**
+     * 
      * @param arg1
      * @param arg0
      * @return
@@ -531,19 +512,6 @@ public interface SmartHomeManagerWebServices {
      * 
      * @param arg0
      * @return
-     *     returns connection.webservices.consumer.stubs.CommandResponseObject
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteThermometerRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/deleteThermometerResponse")
-    public CommandResponseObject deleteThermometer(
-        @WebParam(name = "arg0", partName = "arg0")
-        UserTransferObject arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
      *     returns connection.webservices.consumer.stubs.ThermometerTransferObject
      */
     @WebMethod
@@ -565,6 +533,38 @@ public interface SmartHomeManagerWebServices {
     public ThermometerTransferObject getThermometerData(
         @WebParam(name = "arg0", partName = "arg0")
         UserTransferObject arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.CommandResponseObject
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/logoutResponse")
+    public CommandResponseObject logout(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        UserTransferObject arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns connection.webservices.consumer.stubs.StringArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/readLogsRequest", output = "http://wsprovider.connection.global.smarthome.thm.de/SmartHomeManagerWebServices/readLogsResponse")
+    public StringArray readLogs(
+        @WebParam(name = "arg0", partName = "arg0")
+        UserTransferObject arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        int arg1);
 
     /**
      * 

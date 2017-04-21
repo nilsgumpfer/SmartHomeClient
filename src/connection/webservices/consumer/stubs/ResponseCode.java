@@ -54,6 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="UserDeletionFailed"/>
  *     &lt;enumeration value="UserAlteredSuccessfully"/>
  *     &lt;enumeration value="UserAlterationFailed"/>
+ *     &lt;enumeration value="Success"/>
+ *     &lt;enumeration value="Fail"/>
  *     &lt;enumeration value="WeatherStationCouldNotBeCreated"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -144,6 +146,10 @@ public enum ResponseCode {
     USER_ALTERED_SUCCESSFULLY("UserAlteredSuccessfully"),
     @XmlEnumValue("UserAlterationFailed")
     USER_ALTERATION_FAILED("UserAlterationFailed"),
+    @XmlEnumValue("Success")
+    SUCCESS("Success"),
+    @XmlEnumValue("Fail")
+    FAIL("Fail"),
     @XmlEnumValue("WeatherStationCouldNotBeCreated")
     WEATHER_STATION_COULD_NOT_BE_CREATED("WeatherStationCouldNotBeCreated");
     private final String value;
