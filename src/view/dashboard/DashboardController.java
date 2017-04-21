@@ -3,6 +3,7 @@ package view.dashboard;
 import connection.webservices.consumer.stubs.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import logger.SmartHomeClientLogger;
@@ -245,6 +246,9 @@ public class DashboardController {
     @FXML
     private Label heating_Name;
 
+    @FXML
+    private TextField heating_TemperatureInput;
+
     private SmartHomeManagerWebServices wsProvider = null;
     private UserTransferObject userTransferObject = new UserTransferObject();
 
@@ -254,6 +258,7 @@ public class DashboardController {
         heating_PowerState.setText("");
         heating_Manufacturer.setText("");
         heating_Temperature.setText("");
+        heating_TemperatureInput.setVisible(false);
         heating_Name.setText("");
         heating_Serialnumber.setText("");
         heating_Mode.setText("");
@@ -441,6 +446,32 @@ public class DashboardController {
             wsProvider.undoLastCommand(userTransferObject);
             //TODO: Show message
         }
+    }
+
+    public void heating_Temperature_mouseEntered(){
+        heating_TemperatureInput.setVisible(true);
+        heating_TemperatureInput.setText(heating_Temperature.getText());
+    }
+
+    public void heating_Temperature_mouseExited(){
+        String oldValue = heating_Temperature.getText();
+        String newValue = heating_TemperatureInput.getText();
+
+            if (! oldValue.equals(newValue)){
+                try {
+                    double temperature = Double.parseDouble(newValue);
+
+                    if(testOrEstablishConnection()) {
+                        wsProvider.setHeatingTemperature(userTransferObject, temperature);
+                        heating_Temperature.setText(newValue);
+                    }
+                }
+                catch (Exception e) {
+                    logMessage("Ungültiger Zahlenwert!");
+                }
+            }
+
+        heating_TemperatureInput.setVisible(false);
     }
 
     public void refreshButton_mouseReleased(){
